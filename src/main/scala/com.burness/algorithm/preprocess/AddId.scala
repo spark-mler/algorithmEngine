@@ -2,7 +2,7 @@ package com.burness.algorithm.preprocess
 
 import com.burness.utils.AbstractParams
 import org.apache.spark.SparkContext
-import org.apache.spark.sql.Row
+import org.apache.spark.sql.{SparkSession, Row}
 import org.apache.spark.sql.hive.HiveContext
 import org.apache.spark.sql.types.{LongType, StructField, StructType}
 import scopt.OptionParser
@@ -10,7 +10,7 @@ import scopt.OptionParser
 /**
  * Created by burness on 16-6-24.
  */
-class AddId(sc: SparkContext) {
+class AddId(spark: SparkSession) {
   case class Params(inputTableName: String = null,
                     outputTableName: String = null,
                     addIdName: String = null
@@ -52,11 +52,7 @@ class AddId(sc: SparkContext) {
   }
 
   def run(params: Params): Unit ={
-    val hiveContext = new HiveContext(sc)
-
-    import hiveContext.implicits._
-    import hiveContext.sql
-    val inputDF = sql(s"select * from ${params.inputTableName}")
+    val inputDF = spark.sql(s"select * from ${params.inputTableName}")
     val inputRddIndex = inputDF.rdd.zipWithIndex().map{
       case (k,v) =>
         val tempSeq = v +: k.toSeq
@@ -65,7 +61,7 @@ class AddId(sc: SparkContext) {
 
     val newField = StructField(params.addIdName, LongType, false)
     val newStructFields = newField +: inputDF.schema.fields
-    val result = hiveContext.createDataFrame(inputRddIndex, StructType(newStructFields))
+    val result = spark.createDataFrame(inputRddIndex, StructType(newStructFields))
     result.write.saveAsTable(params.outputTableName)
   }
 }
