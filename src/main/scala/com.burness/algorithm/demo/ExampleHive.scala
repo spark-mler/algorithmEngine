@@ -1,4 +1,4 @@
-//package com.chinac.algorithm.demo
+//package com.burness.algorithm.demo
 //
 //import org.apache.spark.{SparkContext, SparkConf}
 //import org.apache.spark.sql.hive.HiveContext

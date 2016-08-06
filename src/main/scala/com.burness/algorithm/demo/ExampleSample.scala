@@ -1,4 +1,4 @@
-//package com.chinac.algorithm.demo
+//package com.burness.algorithm.demo
 //
 ////import com.com.burness.algorithm.preprocess.Sample
 //import com.com.burness.algorithm.preprocess.Sample

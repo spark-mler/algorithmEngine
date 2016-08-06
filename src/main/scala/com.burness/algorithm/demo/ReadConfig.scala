@@ -1,4 +1,4 @@
-//package com.chinac.demo
+//package com.burness.demo
 //import org.json4s._
 //import org.json4s.jackson.JsonMethods._
 ///**

@@ -1,4 +1,4 @@
-//package com.chinac.algorithm.preprocess
+//package com.burness.algorithm.preprocess
 //
 //import org.apache.spark.sql.{DataFrame, SQLContext}
 //

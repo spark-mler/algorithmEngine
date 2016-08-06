@@ -1,4 +1,4 @@
-//package com.chinac.algorithm.preprocess
+//package com.burness.algorithm.preprocess
 //
 //import com.com.burness.utils.AbstractParams
 //import org.apache.spark.SparkContext

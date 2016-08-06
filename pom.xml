@@ -4,39 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.chinac</groupId>
+    <groupId>com.burness</groupId>
     <artifactId>algorithmEngine</artifactId>
     <version>1.0-SNAPSHOT</version>
 
 
     <properties>
-        <!--<spark.version>2.0.0-SNAPSHOT</spark.version>-->
         <spark.version>2.0.0</spark.version>
-        <scala.version>2.11.4</scala.version>
+        <scala.version>2.11.8</scala.version>
         <project.version>2.11</project.version>
         <scala.binary.version>2.11</scala.binary.version>
     </properties>
-    <!--<repositories>-->
-        <!--<repository>-->
-            <!--<id>yihaodian-public</id>-->
-            <!--<name>YiHaoDian public Repository</name>-->
-            <!--<url>http://maven.yihaodian.cn/content/repositories/public</url>-->
-            <!--<releases>-->
-                <!--<enabled>true</enabled>-->
-                <!--<updatePolicy>always</updatePolicy>-->
-            <!--</releases>-->
-            <!--<snapshots>-->
-                <!--<enabled>true</enabled>-->
-                <!--<updatePolicy>always</updatePolicy>-->
-            <!--</snapshots>-->
-        <!--</repository>-->
-    <!--</repositories>-->
     <dependencies>
-        <!--<dependency>-->
-            <!--<groupId>org.scala-tools</groupId>-->
-            <!--<artifactId>maven-scala-plugin</artifactId>-->
-            <!--<version>2.15.2</version>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-compiler</artifactId>
@@ -78,16 +57,6 @@
             <artifactId>twitter4j-stream</artifactId>
             <version>4.0.4</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.apache.spark</groupId>-->
-            <!--<artifactId>spark-streaming-twitter_${scala.binary.version}</artifactId>-->
-            <!--<version>${spark.version}</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.apache.spark</groupId>-->
-            <!--<artifactId>spark-streaming-kafka_${scala.binary.version}</artifactId>-->
-            <!--<version>${spark.version}</version>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>com.101tec</groupId>
             <artifactId>zkclient</artifactId>
@@ -170,9 +139,5 @@
                 </executions>
             </plugin>
         </plugins>
-
-
     </build>
-
-
 </project>

@@ -1,4 +1,4 @@
-//package com.chinac.algorithm.demo
+//package com.burness.algorithm.demo
 //
 //import com.com.burness.algorithm.preprocess.MissFill
 //import org.apache.spark.{SparkConf, SparkContext}
