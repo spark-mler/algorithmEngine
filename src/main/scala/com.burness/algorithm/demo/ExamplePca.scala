@@ -13,8 +13,9 @@ object ExamplePca {
     val args_test = Seq("--inputTableName", "pca_input", "--outputTableName", "pca_output",
       "--inputCol","f1,f2,f3,f4,f5","--n_components","3").toArray
 
-    val model = new Pca(spark)
+    val model = new  Pca(spark)
     val params = model.parseParams(args_test)
+    print(params)
     model.run(params)
   }
 

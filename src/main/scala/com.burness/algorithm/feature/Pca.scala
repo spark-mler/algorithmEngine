@@ -37,7 +37,7 @@ class Pca(spark: SparkSession) {
 //      opt[String]("outputCol")
 //        .text("the col names of the output table")
 //        .action((x, c) => c.copy(outputCol = x))
-      opt[Int]("k")
+      opt[Int]("n_components")
         .text("the num of components")
         .action((x, c) => c.copy(n_components = x))
       note(
@@ -62,6 +62,7 @@ class Pca(spark: SparkSession) {
 
   def run(params: Params): Unit = {
 //     read the hive table and Vectors
+    println(params.inputTableName)
     val inputTable = spark.sql(s"select * from ${params.inputTableName}")
     val inputColArray = params.inputCol.split(",")
     val assembler = new VectorAssembler()
